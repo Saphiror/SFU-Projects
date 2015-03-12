@@ -1,0 +1,176 @@
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+var  infowindow = new google.maps.InfoWindow();
+var placesService;
+var details;
+var routeBoxes = new RouteBoxer();
+var hotelMarkers = [];
+var restaurantMarkers = [];
+
+function initialize() {
+  //initializes the map
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  var vancouver = new google.maps.LatLng(49.283949900000000000, -123.120086799999970000);
+  var mapOptions = {
+    zoom:7,
+    center: vancouver
+  }
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  directionsDisplay.setMap(map);
+
+
+}
+
+function calcRoute(start, end) {
+  var csrfmiddlewaretoken = null;
+  if (typeof(start) == "undefined") {
+    //Given the start and end points from the user, calculate and show the route on the map
+    start = document.getElementById('start').value;
+    end = document.getElementById('end').value;
+    csrfmiddlewaretoken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+  }
+  var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      if (csrfmiddlewaretoken != null) {
+        $.post("/submittrip/", { start: start, end: end, csrfmiddlewaretoken: csrfmiddlewaretoken} );
+      }
+
+      directionsDisplay.setDirections(response);
+
+      pointsArray = response.routes[0].overview_path;
+      //create boxes to fit to the route
+      var covers = routeBoxes.box(pointsArray, 20); 
+      for(var i=1; i<covers.length; i=i+1){
+        showStuff(map,covers[covers.length-i]);
+      }
+    } else {
+      console.log("Error finding directions. This should be shown to the user")
+    }
+  });
+
+}
+
+function showStuff(map,position){
+     //The function to find the different hotels and other locations of interest along the route
+      var request = {
+        bounds: position, // in this box containing the route
+        types: ['lodging', 'restaurant'], //find hotels
+        rankBy: google.maps.places.RankBy.PROMINENCE //ranks by rating
+      };
+         
+      placesService = new google.maps.places.PlacesService(map);
+      var service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+      //service.getDetails(request, callback);
+     
+}
+
+function callback(results, status) {
+  //Function to call the marker creator
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
+}
+
+function createMarker(place){
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+<<<<<<< .mine
+    map: map,
+    position: place.geometry.location
+
+  });
+  //alert(place.types[0]);
+  if( place.types.indexOf('lodging')>=0){
+    //alert("Hotel");
+    hotelMarkers.push(marker);  
+  }
+  else if( place.types.indexOf('restaurant')>=0){
+    //alert("restaurant");
+    restaurantMarkers.push(marker);
+  }
+  //}
+  
+
+
+  //Display basic details for places using the exisiting places
+  var request = { reference: place.reference };
+  var service = new google.maps.places.PlacesService(map);
+  //gets additional details of places
+  service.getDetails(request, function(details, status){
+    google.maps.event.addListener(marker, 'click', function(){
+      infowindow.setContent("<p>" + details.name + "<br />" + 
+        "Address: " + details.formatted_address + "<br />" + 
+        "Phone: " + details.formatted_phone_number + "<br />" +
+        "Rating: " + details.rating +"/5" + "<br />" + 
+        "Website: <a href=" + details.website + ">" + details.website + "</a></p>");
+      infowindow.open(map, this);
+=======
+    map:map,
+    position:place.geometry.location
+>>>>>>> .r45
+    });
+  var request = {reference:place.reference};
+  google.maps.event.addListener(marker,'click',function(){
+    placesService.getDetails(request, function(place,status){
+      if (status==google.maps.places.PlacesServiceStatus.OK){
+        var Note = '<h5><center>'+place.name+'</center></h5><p>Address: '+place.formatted_address;
+        if (!!place.website)
+          Note += '<br>Website: <a target="_blank" href="'+place.website+'">'+place.website+'</a>';
+        if(!!place.formatted_phone_number)
+          Note += '<br>Phone: '+place.formatted_phone_number;
+        if(!!place.rating)
+          Note += '<br>Rating out of 5 : '+place.rating +'/5' 
+        infowindow.setContent(Note);
+        infowindow.open(map,marker);
+      }
+      else{
+        var Note = "<p>No Result,"+ status+"</p";
+        infowindow.setContent(Note);
+        infowindow.open(map,marker);
+      }
+    })
+  })
+}
+
+<<<<<<< .mine
+function setAllMap(map, markerType){
+  for(var i =0; i<markerType.length; i++){
+    markerType[i].setMap(map);
+  }
+}
+
+=======
+>>>>>>> .r45
+function toggleHotelMarkers(){
+  if (!document.getElementById("hotel").checked){
+    setAllMap(null, hotelMarkers);
+  }
+  else{
+    setAllMap(map, hotelMarkers);
+  }
+  
+}
+
+
+function toggleRestaurantMarkers(){
+  if (!document.getElementById("restaurant").checked){
+    setAllMap(null, restaurantMarkers);
+  }
+  else{
+    setAllMap(map, restaurantMarkers);
+  }
+  
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+

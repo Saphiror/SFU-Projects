@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pa2sample", "pa2sample.vcproj", "{9C97F839-06F7-4643-AD2C-1E645C94AC7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C97F839-06F7-4643-AD2C-1E645C94AC7D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9C97F839-06F7-4643-AD2C-1E645C94AC7D}.Debug|Win32.Build.0 = Debug|Win32
+		{9C97F839-06F7-4643-AD2C-1E645C94AC7D}.Release|Win32.ActiveCfg = Release|Win32
+		{9C97F839-06F7-4643-AD2C-1E645C94AC7D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

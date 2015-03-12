@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;libraries=places"></script>
+<script src="http://maps.googleapis.com/maps/api/geocode/output?json"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/routeboxer/src/RouteBoxer.js"></script>
+<script src="/static/website/map_places.js"></script>
+{% endblock %}
+
+{% block content %}
+ <div class="container">
+    <div id="where" class="row">
+        <div class="well">
+            <h1> Plan your Roadtrip! </h1>
+            <h2><small> Step 1: Where are you going? </small></h2>
+            {% csrf_token %}
+            <input type="text" id="start" placeholder="Start">
+            <br>
+            <input type="text" id="end" placeholder="End">
+            <br>
+            <div id="error">
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div id="map" class="row">
+        <div id="resultList" class="col-md-2 well">
+        <div id="results"></div>
+                <h2>Results</h2>
+                <table class="table table-hover" id="places">
+                
+                </table>
+        </div>
+        <div id="map-canvas" class="col-md-8"></div>
+        <div id="choice" class="col-md-4 well">
+            <h2 id="step2Head"><small>Step 2: What do you want to find on your route?</small></h2>
+            <br>
+            <div class='wrapper text-center'>
+            <div class="btn-group-vertical" data-toggle="buttons" id="typeSelector" style="text-align:center">
+                <label class="btn btn-hotel btn-lg active" onclick="toggleHotelMarkers()">
+                    <input type="checkbox" id="hotel" checked>Hotels <span class="glyphicon glyphicon-home"></span>
+                </label>
+                <label class="btn btn-restaurant btn-lg active" onclick="toggleRestaurantMarkers()">
+                    <input type="checkbox" id="restaurant" checked>Restaurants <span class="glyphicon glyphicon-glass"></span>
+                </label>
+                <label class="btn btn-primary btn-lg active" onclick="toggleGasMarkers()">
+                    <input type="checkbox" id="gas" checked>Gas Stations <span class="glyphicon glyphicon-road"></span>
+                </label>
+                <label class="btn btn-attractions btn-lg active" onclick="toggleAttractionMarkers()">
+                    <input type="checkbox" id="attraction" checked>Attractions <span class="glyphicon glyphicon-star"></span>
+                </label>
+            </div>
+            </div>
+            <br>
+
+            <div class='wrapper text-center'>
+                <div id="go">
+                <button type="button" class="btn btn-dark btn-lg" onclick="step2()">Let's Go!</button>
+                <button type="button" class="btn btn-dark btn-lg" onclick="step2auto()">Auto Route</button>
+                </div>
+                <br>
+                <!--This button recalculates with the selected items in the list -->
+                <div id="recalc">
+                    <button type="button" class="btn btn-dark btn-lg" onclick="reRoute();">Remap Route</button>
+                </div>
+            </div>
+           
+
+        </div>
+    </div>
+   
+    <div class="row">
+
+        <div id="savedList" class="col-md-12">
+            <table class="table table-hover" id="infoList">
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Website</th>
+                    <th>Phone Number</th>
+                    <th>Rating</th>
+                    <th>Delete</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

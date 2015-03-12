@@ -1,0 +1,31 @@
+﻿Build started 26/11/2013 11:31:11 PM.
+     1>Project "C:\Users\Teague\Dropbox\SFU\CMPT 365\Project\pa2sample\pa2sample.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Debug/pa2sample.pch" /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\Debug/pa2sample.pch" /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /Gd /TP /analyze- /errorReport:prompt pa2sample.cpp pa2sampleDlg.cpp sound.cpp video.cpp
+         video.cpp
+     1>c:\users\teague\dropbox\sfu\cmpt 365\project\pa2sample\video.cpp(3): warning C4627: '#include <uuids.h>': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+         sound.cpp
+         pa2sampleDlg.cpp
+     1>c:\users\teague\dropbox\sfu\cmpt 365\project\pa2sample\pa2sampledlg.cpp(225): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\teague\dropbox\sfu\cmpt 365\project\pa2sample\pa2sampledlg.cpp(226): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+         pa2sample.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _DEBUG /D _VC80_UPGRADE=0x0600 /D _AFXDLL /l"0x0409" /nologo /fo".\Debug\pa2sample.res" pa2sample.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/pa2sample.exe" /INCREMENTAL /NOLOGO strmiids.lib strmbasd.lib quartz.lib winmm.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:".\Debug/pa2sample.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\pa2sample.lib" /MACHINE:X86 /SAFESEH .\Debug\pa2sample.res
+         .\Debug/pa2sample.obj
+         .\Debug/pa2sampleDlg.obj
+         .\Debug/sound.obj
+         .\Debug/StdAfx.obj
+         .\Debug/video.obj
+     1>LINK : fatal error LNK1104: cannot open file 'strmbasd.lib'
+     1>Done Building Project "C:\Users\Teague\Dropbox\SFU\CMPT 365\Project\pa2sample\pa2sample.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:10.27

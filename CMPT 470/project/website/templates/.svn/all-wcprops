@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/124/project/website/templates
+END
+trip.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/111/project/website/templates/trip.html
+END
+history.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/94/project/website/templates/history.html
+END
+createuser.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/91/project/website/templates/createuser.html
+END
+trip_edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/103/project/website/templates/trip_edit.html
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/124/project/website/templates/index.html
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/91/project/website/templates/login.html
+END
+logout.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/22/project/website/templates/logout.html
+END
+base.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/91/project/website/templates/base.html
+END

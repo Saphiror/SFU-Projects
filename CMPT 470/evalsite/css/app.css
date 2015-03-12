@@ -1,0 +1,17 @@
+body {
+  min-height: 2000px;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.courseListing {
+  clear:top;
+}
+
+
+.spacer{
+  width:100%;
+  margin-top:95px;
+}

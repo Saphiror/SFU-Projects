@@ -1,0 +1,27 @@
+K 26
+svn:wc:ra_dav:activity-url
+V 38
+/svn/CMPT470-1141-g-n-plus-1/!svn/act/
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/127/project
+END
+manage.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/9/project/manage.py
+END
+sqldump.sql
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/125/project/sqldump.sql
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/8/project/README
+END

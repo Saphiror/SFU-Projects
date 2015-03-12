@@ -1,0 +1,75 @@
+<table>
+    <tr>
+        <td>Career</td>
+        <td>{{data.career}}</td>
+    </tr>
+    <tr>
+        <td>Units</td>
+        <td>{{data.units}}</td>
+    </tr>
+    <tr>
+        <td>Academic Group</td>
+        <td>{{data.faculty}}</td>
+    </tr>
+    <tr>
+        <td>Academic Organization</td>
+        <td>{{data.dept}}</td>
+    </tr>
+    <tr>
+        <td>Enrollment Requirement</td>
+        <td>{{data.requirements}}</td>
+    </tr>
+    <tr>
+        <td>Requirement Designation</td>
+        <td>{{data.designation}}</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>{{data.description}}</td>
+    </tr>
+</table>
+
+Offerings: 
+<header ng-repeat-start="sec in data.sections">
+<div>
+</header>
+<table>
+    <tr>
+        <th>Days &amp; Times</th>
+        <th>Room</th>
+        <th>Instructor</th>
+        <th>Meeting Dates</th>
+    </tr>
+	<tr ng-repeat="meet in sec.meetings">
+        <td>{{meet.days}}</td>
+        <td>{{meet.room}}</td>
+        <td>{{meet.instructor}}</td>
+        <td>{{meet.dates}}</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>Class Capacity</td>
+        <td>{{sec.capacity}}</td>
+        <td>Wait List Capacity</td>
+        <td>{{sec.waitcap}}</td>
+    </tr>
+    <tr>
+        <td>Enrollment Total</td>
+        <td>{{sec.total}}</td>
+        <td>Wait List Total</td>
+        <td>{{sec.waittot}}</td>
+    </tr>
+    <tr>
+        <td>Available Seats</td>
+        <td>{{sec.available}}</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<footer ng-repeat-end>
+</div>
+</footer>
+
+

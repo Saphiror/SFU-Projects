@@ -1,0 +1,51 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: pa2sample - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/pa2sample.res" /d "_DEBUG" /d "_AFXDLL" "D:\clu2\pa2sample\pa2sample.rc"" 
+Creating temporary file "C:\TEMP\RSP498.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/pa2sample.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\clu2\pa2sample\pa2sample.cpp"
+"D:\clu2\pa2sample\pa2sampleDlg.cpp"
+"D:\clu2\pa2sample\video.cpp"
+]
+Creating command line "cl.exe @C:\TEMP\RSP498.tmp" 
+Creating temporary file "C:\TEMP\RSP499.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/pa2sample.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\clu2\pa2sample\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\TEMP\RSP499.tmp" 
+Creating temporary file "C:\TEMP\RSP49A.tmp" with contents
+[
+strmiids.lib strmbasd.lib quartz.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/pa2sample.pdb" /debug /machine:I386 /out:"Debug/pa2sample.exe" /pdbtype:sept 
+.\Debug\pa2sample.obj
+.\Debug\pa2sampleDlg.obj
+.\Debug\StdAfx.obj
+.\Debug\video.obj
+.\Debug\pa2sample.res
+]
+Creating command line "link.exe @C:\TEMP\RSP49A.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+pa2sample.cpp
+pa2sampleDlg.cpp
+video.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+pa2sample.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

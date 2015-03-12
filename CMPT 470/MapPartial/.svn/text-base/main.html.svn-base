@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Roadtrip Planner</title>
+    <link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+    <script src="http://maps.googleapis.com/maps/api/geocode/output?json"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/routeboxer/src/RouteBoxer.js"></script>
+    <script src="map_places.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Roadtrip</a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+     </div>
+    </div> 
+ <div class="container-fluid">
+     <div id="map" class="row-fluid">
+        <div id="map-canvas" class="col-md-6"></div>
+        <div id= choice class="col-md-6">
+                <!--<h1> Plan your Roadtrip! </h1>
+                <h2><small> Step 1: Where are you going? </small></h2>-->
+                <input type="text" id="start" placeholder="Start"> <br>
+                <input type="text" id="end" placeholder="End"> <br>
+                <button type="button" onclick="calcRoute()">Let's Go!</button>
+        </div>
+     </div>
+ </div>
+    
+  </body>
+</html>
+
+

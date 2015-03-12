@@ -1,0 +1,1 @@
+((a) (b) (p (a b c d e)) (q (c e)) (c (a b)) (r (a b d)) (d))

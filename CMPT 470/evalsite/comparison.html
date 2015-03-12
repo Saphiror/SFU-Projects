@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Group 11 Comparison</title>
+<style type="text/css">
+p {
+	text-indent:50px;
+}
+</style>
+</head>
+<body>
+<h1>A Brief Summary of Angular JS, and comparisons of AngularJS to EmberJS, DurandalJS, and Backbone.js</h1>
+
+<p>
+AngularJS is a client side model-view-controller Javascript framework that
+enhances HTML to allow for the creation of dynamic web pages. One of the
+most basic ways AngularJS extends HTML is templating. Templating allows
+developers to create templates to dictate how dynamic content will be displayed
+on a page. In a single page application, these views will be loaded into a
+container on the screen without having to reload the page. Another feature of
+AngularJS is directives which add functionality to these templates. Directives
+allow for the creation and manipulation of the data being loaded into the
+template. They also provide some of the logic needed in the template. To provide
+the rest of the logic developers will commonly use in their templates,
+AngularJS provides filters which can filter data by a variety of conditions. 
+</p>
+<p>
+AngularJS also provides some nice functionality to developers when building
+single page applications. One of these is data binding, which automatically
+syncs the data between the view and the controller. AngularJS also uses dependency
+injection to pass only the data that is needed to a view, and to not pass the data
+until it is needed. This dependency injection, as well as the use of the
+model-view-controller model make AngularJS applications easy to test.
+</p>
+<p>
+Overall AngularJS is an easy to use framework that helps developers create dynamic
+single page applications. Below, we will compare AngularJS to three other JavaScript
+frameworks, EmberJS, DurandalJS, and Backbone.js.
+</p>
+
+<h2>
+Ember
+</h2>
+
+<p>
+AngularJS and EmberJS are both open-source client-side JavaScript MVC
+frameworks. Looking at both Angular and Ember, it’s clear how much simpler
+and easier to pick up Angular is over Ember. Of course, simplicity has its downfalls;
+Ember has many tools you will find useful if you need to build larger applications
+that Angular is missing.
+</p>
+<p>
+Both Ember and Angular use data binding to sync application data between the view
+and the controller. Angular embraces JavaScript, while Ember enhances it. This means
+that Angular doesn’t need getters/setters, instead it uses data binding to work with
+all Java objects. On the down side this also means that integration with non-Angular
+libraries is much tougher. Ember’s enhancement of JavaScript allows an object model with
+familiar object oriented practices. The enhancements make the object model more complex
+to learn than Angular’s, giving it a steeper learning curve. One of the main tools Ember
+lacks in contrast to Angular is that of Directives. Angular Directives give the user very
+high control on the configuration of DOM elements. If you want a similar functionality with
+Ember the dynamic behavior needs to be in the view. 
+</p>
+<p>
+Angular is much more adept at testing, allowing its users to isolate problematic code
+during development with dependency injection. Angular works best with small to mid size
+applications, while Ember, even though it would require a bit more work, has much more
+benefits when used with more complex applications. 
+</p>
+
+<h2>
+Backbone.js
+</h2>
+<p>
+Another JavaScript web framework designed for single page applications is Backbone.js.
+Backbone.js provides some of the same functionality as AngularJS, such as data binding
+and templating. However, Backbone.js is a lightweight framework and does not contain the
+variety of functions that AngularJS does. One feature of AngularJS that Backbone.js is
+missing is the controller. Backbone.js gives developers a small set of model and view
+primitives only. Because of this, Backbone.js acts as building blocks for developers
+who do not want predefined convention. This makes Backbone.js highly flexible, but leads
+to more work for the developer, and more decisions to be made when setting up an application.
+The lack of included functionality in Backbone.js compared to AngularJS also leads to
+decreased developer productivity because developers are left to code some of the functions
+included in AngularJS from scratch. Overall, choosing between AngularJS and Backbone.js is a
+personal decision for the programmer, depending whether they want predefined conventions with
+more functionality, or more flexibility with the development of their web application.
+</p>
+
+<h2>
+DurandalJS
+</h2>
+<p>
+While there are many frameworks to choose from, DurandalJS and AngularJS seem to be one
+of the least compared JavaScript frameworks out there. Both are well developed, modern
+frameworks with similarities within their core features. Both frameworks aim to solve
+the problem of building single page applications, but DurandalJS primarily aims to target
+the mobile development first paradigm. DurandalJS combines and builds upon popular and
+feature specific rich library such as jQuery, KnockoutJS and RequireJS. On the other hand,
+AngularJS provides their own elegant solution so you do not require any dependencies on other
+library. Angular achieves this by providing their own methods out of the box like filter, whereas
+in Durandal, you’ll need to use the Knockout component to build upon this feature. Also, both have
+data-binding and directives features, but the overall consensus seem to like AngularJS for its easy
+and elegant solution. In hindsight, both frameworks are very similar in their features. I would
+recommend DurandalJS for those who are looking for an all-in-one package of their favourite
+libraries with the knowledge of jQuery and KnockoutJS already. Meanwhile I would suggest
+AngularJS for those who are new to JavaScript framework as AngularJS is easy to learn and
+provides a good feature rich package out of the box.
+</p>
+
+<div style="text-align: center">
+<h3>
+References
+</h3>
+</div>
+<ul>
+<li>
+<a href="http://www.ryankeeter.com/angularjs-vs.-durandaljs-%E2%80%93-part-1-on-n-%E2%80%93-where-do-these-technologies-fit">
+AngularJS vs. DurandalJS – part 1 of N – Where do these technologies fit?
+</a>
+</li>
+<li>
+<a href="http://durandaljs.com/">Durandal</a>
+</li>
+<li>
+<a href="http://angularjs.org/">AngularJS</a>
+</li>
+<li>
+<a href="http://backbonejs.org/">Backbone</a>
+</li>
+<li>
+Group 6 presentation: Backbone.js
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div style="display: none;">
+    <input id="start" value="{{t.start}}">
+    <input id="end" value="{{t.end}}">
+    {% csrf_token %}
+</div>
+<div class="container-fluid">
+    <div id="map" class="row-fluid">
+        <div id="map-canvas"></div>
+    </div>
+    <a class="btn  btn-default" href="{% url 'trip_edit' t.pk %}">Edit</a>
+    <button class="btn btn-default" onclick="calcRoute()">Add to trip</button>
+
+
+
+    <table class="table table-hover" id="infoList">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Website</th>
+                <th>Phone Number</th>
+                <th>Rating</th>
+                <th>Delete</th>
+            </tr>
+            {% for p in places %}
+            <tr id="placerow{{p.id}}">
+                <td id="placeName">{{ p.name }}</td>
+                <td>{{ p.address }}</td>
+                <td><a target="_blank" href="{{ p.website }}">{{ p.website }}</a></td>
+                <td>{{ p.phone }}</td>
+                <td>{{ p.rating }}</td>
+                <td><button class="btn btn-danger" onclick="deletePlace({{p.id}});">Delete</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+</div>
+
+<script>
+	trip_id={{t.id}};
+    reRoute();
+</script>
+
+{% endblock %}
+
+

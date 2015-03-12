@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/35/project/project
+END
+wsgi.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/9/project/project/wsgi.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/9/project/project/__init__.py
+END
+settings.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/21/project/project/settings.py
+END
+urls.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/35/project/project/urls.py
+END

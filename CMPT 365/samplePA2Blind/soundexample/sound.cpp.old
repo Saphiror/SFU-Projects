@@ -1,0 +1,42 @@
+
+#include "stdafx.h"
+#include "sound.h"
+#include <mmsystem.h>
+
+HWAVEOUT Sound::hWaveOut;
+
+//================================================================================================
+void Sound::init(){
+    WAVEFORMATEX wfx; 
+
+    wfx.nSamplesPerSec = 8000; 
+    wfx.wBitsPerSample = 8; 
+    wfx.nChannels = 1; 
+
+    wfx.cbSize = 0; 
+    wfx.wFormatTag = WAVE_FORMAT_PCM;
+    wfx.nBlockAlign = (wfx.wBitsPerSample >> 2) * wfx.nChannels;
+    wfx.nAvgBytesPerSec = wfx.nBlockAlign * wfx.nSamplesPerSec;
+
+    if(waveOutOpen(&hWaveOut, WAVE_MAPPER, &wfx, 0, 0, CALLBACK_NULL)
+	  != MMSYSERR_NOERROR) 
+	{
+        fprintf(stderr, "unable to open WAVE_MAPPER device\n");
+        ExitProcess(1);
+    }
+}
+
+//================================================================================================
+void Sound::writeAudioBlock(LPSTR block)
+{
+    WAVEHDR header;
+    ZeroMemory(&header, sizeof(WAVEHDR));
+    header.dwBufferLength = 500;
+    header.lpData = block;
+    waveOutPrepareHeader(hWaveOut, &header, sizeof(WAVEHDR));
+    waveOutWrite(hWaveOut, &header, sizeof(WAVEHDR));
+	do{
+		Sleep(100);
+	}while(waveOutUnprepareHeader(hWaveOut,&header,sizeof(WAVEHDR)) == WAVERR_STILLPLAYING);
+		
+}

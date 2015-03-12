@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/127/project/website
+END
+admin.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/10/project/website/admin.py
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/127/project/website/views.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/10/project/website/__init__.py
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/108/project/website/models.py
+END
+urls.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/CMPT470-1141-g-n-plus-1/!svn/ver/102/project/website/urls.py
+END

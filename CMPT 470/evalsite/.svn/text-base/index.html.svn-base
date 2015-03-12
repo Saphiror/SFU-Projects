@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>SIS</title>
+  <link rel="stylesheet" href="/css/app.css"/>
+</head>
+<body>
+
+  <div class="nav navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="/">Course Search</a>
+        <ul class="nav navbar-nav">
+          <li><a href="/" class="home" ng-click="active='home'">Home</a></li>
+          <li><a href="/course/list" class="listings" ng-click="active='listing'">Listings</a></li>
+          <li><a href="/cart">Cart</a></li>
+        </ul>
+      </div>
+    </div>  
+  </div>  
+
+  <div ng-view></div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<!--AngularUI bootstrap plugins-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.min.js"></script>
+
+
+  <!---
+  <script src="/lib/angular/angular.js"></script>
+  <script src="/lib/angular/angular-route.js"></script>
+  -->
+  <script src="/js/app.js"></script>
+  <script src="/js/services.js"></script>
+  <script src="/js/controllers.js"></script>
+  <script src="/js/filters.js"></script>
+  <script src="/js/directives.js"></script>
+</body>
+</html>

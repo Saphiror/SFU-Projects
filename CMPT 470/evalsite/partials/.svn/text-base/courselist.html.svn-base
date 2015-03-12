@@ -1,0 +1,31 @@
+ <link rel="stylesheet" href="/css/app.css"/>
+
+
+<!--<div ng-include="'themes/' + themeId + '/views/main.html'"></div>	-->
+
+
+<div class="container">
+		Filter by anything! <input type="text" placeholder="Type to search anything" ng-model="search.$">
+	<br>
+		Search for class name <input type="text" placeholder="class name" ng-model="search.name"><br>
+
+		Search for class number <input type="text" placeholder="class number" ng-model="search.id"><br>
+
+		Search by faculty <input type="text" placeholder="faculty" ng-model="search.faculty"><br>
+
+		Search by Instructor <input type="text" placeholder="Instructor" ng-model="search.instructor"><br>
+
+
+<!--
+	<select ng-model="search.career" ng-options="c.career for c in courses"></select>-->
+
+	<ul>
+		<li ng-repeat="course in courses | filter:search">
+			<a href="/courses/{{course.id}}">
+				{{course.name| lowercase}}
+			</a>
+		</li>
+	</ul>
+</div>
+
+

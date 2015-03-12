@@ -1,0 +1,15 @@
+#map {
+        height: 500px
+}
+#map-canvas {
+       
+       height: 400px;
+}
+body {
+        padding-top: 60px;
+}
+@media (max-width: 979px) {
+    body {
+        padding-top: 0px;
+    }
+}

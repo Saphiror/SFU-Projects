@@ -1,0 +1,36 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>pa2sample</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>pa2sample</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="pa2sample.vcxproj" File="pa2sample.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">pa2sample.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pa2sample.cpp">pa2sample.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pa2sampleDlg.cpp">pa2sampleDlg.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sound.cpp">sound.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="StdAfx.cpp">StdAfx.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="video.cpp">video.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pa2sample.rc">pa2sample.rc</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pa2sample.h">pa2sample.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pa2sampleDlg.h">pa2sampleDlg.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="resource.h">resource.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sound.h">sound.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="StdAfx.h">StdAfx.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="video.h">video.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pa2sample.ico">RES\pa2sample.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pa2sample.rc2">RES\pa2sample.rc2</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ReadMe.txt">ReadMe.txt</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

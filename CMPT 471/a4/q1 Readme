@@ -1,0 +1,103 @@
+CMPT 471 Assignment 4 Question 1
+
+To execute (after compile)
+	Server: parameter is port (ip is already set to current machine)
+		java TCPServer <port>
+	Client: Requires ip of server and port
+		java TCPClient <ip> <port>
+
+How to use:
+	Client and server set up a encrypted handshake, then the user can type (only lowercase) messages and that the client will encrypt and send to the server which will decrypt, read the message, encrypt it, and send it back to the client, which will decrypt the message.
+
+Encryption Scheme: Diffie-Hellman Algorithm with Cesar's Cipher
+
+	Diffie-Helmman: 
+					Client choses Prime number, a base number, a random integer 'a', and computes it own (base^a % prime) and sends the result as 		well as the prime and base numbers to server in the from DS-ES:##:#:# where to numbers are prime, base, and result 				respectively.
+					Server chooses a random integer 'b' and computes it's own (base^b % prime) and sends result to client
+					Encrypted connection is established.
+					NOTE: For the purpose of this assignment values are set as constant
+
+	Cesar's Cipher:
+					Encryption: Take the character and compute it's numerical value in the alphabet plus the secret key. Alphabet is 'shifted' down by value of secret key, not numerical value corresponds to a different character which is used in the encrypted message
+					Decryption: Subtract the secret key from the current numerical value of the character to get the orignal message.
+
+
+
+DATA SAMPLES
+
+Client:
+	tcarvalh@autumn:~$ java TCPClient 172.17.1.8 8080
+	Ready to send to server...
+	Waiting for response...
+	ServerResult:10
+	12
+	hello
+	Message before encryption: hello
+	Sending encrypted message: tqxxa
+	Server ACK: tqxxa
+	Server ACK Decrypted: hello
+
+Server:
+	tcarvalh@august:~$ java TCPServer 8080  
+	Waiting....
+	Encryption Setup: DH-ES:23:5:3
+	12
+	Waiting....
+	Recieved Encrpyted Message: tqxxa
+	hello
+	Message Decrypted and ACK: tqxxa
+	Waiting....
+
+
+
+
+
+CONNECTION SETUP AND ENCRYPTION ESTABLISHED
+17:18:05.699237 IP autumn.net17.45485 > august.net17.webcache: S 1644331620:1644331620(0) win 5840 <mss 1460,sackOK,timestamp 739733774 0,nop,wscale 5>
+E..<.j@.@...............b..d.........*.........
+,.q.........
+17:18:05.699282 IP august.net17.webcache > autumn.net17.45485: S 1681654791:1681654791(0) ack 1644331621 win 5792 <mss 1460,sackOK,timestamp 739761519 739733774,nop,wscale 5>
+E..<..@.@..~............d<..b..e...............
+,..o,.q.....
+17:18:05.699434 IP autumn.net17.45485 > august.net17.webcache: . ack 1 win 183 <nop,nop,timestamp 739733774 739761519>
+E..4.k@.@...............b..ed<......W2.....
+,.q.,..o
+17:18:05.702341 IP autumn.net17.45485 > august.net17.webcache: P 1:14(13) ack 1 win 183 <nop,nop,timestamp 739733775 739761519>
+E..A.l@.@...............b..ed<.............
+,.q.,..oDH-ES:23:5:3
+
+17:18:05.702431 IP august.net17.webcache > autumn.net17.45485: . ack 14 win 181 <nop,nop,timestamp 739761519 739733775>
+E..4.g@.@...............d<..b..r....W&.....
+,..o,.q.
+17:18:05.704625 IP august.net17.webcache > autumn.net17.45485: P 1:17(16) ack 14 win 181 <nop,nop,timestamp 739761520 739733775>
+E..D.h@.@...............d<..b..r.....4.....
+,..p,.q.ServerResult:10
+
+17:18:05.704736 IP autumn.net17.45485 > august.net17.webcache: . ack 17 win 183 <nop,nop,timestamp 739733776 739761520>
+E..4.m@.@...............b..rd<......W......
+,.q.,..p
+
+
+SEND MESSAGE 'hello' -> encryption: tqxxa
+17:18:13.792696 IP autumn.net17.45485 > august.net17.webcache: P 14:20(6) ack 17 win 183 <nop,nop,timestamp 739735798 739761520>
+E..:.n@.@...............b..rd<.......*.....
+,.x.,..ptqxxa
+
+17:18:13.793836 IP august.net17.webcache > autumn.net17.45485: P 17:23(6) ack 20 win 181 <nop,nop,timestamp 739763542 739735798>
+E..:.i@.@...............d<..b..x.....?.....
+,..V,.x.tqxxa
+
+17:18:13.794012 IP autumn.net17.45485 > august.net17.webcache: . ack 23 win 183 <nop,nop,timestamp 739735798 739763542>
+E..4.o@.@...............b..xd<......G:.....
+,.x.,..V
+
+CLOSE SERVER
+17:18:19.256674 IP autumn.net17.45485 > august.net17.webcache: F 20:20(0) ack 23 win 183 <nop,nop,timestamp 739737164 739763542>
+E..4.p@.@...............b..xd<......A......
+,.~L,..V
+17:18:19.291121 IP august.net17.webcache > autumn.net17.45485: F 23:23(0) ack 21 win 181 <nop,nop,timestamp 739764917 739737164>
+E..4.j@.@...............d<..b..y....<......
+,...,.~L
+17:18:19.291212 IP autumn.net17.45485 > august.net17.webcache: . ack 24 win 183 <nop,nop,timestamp 739737172 739764917>
+E..4.q@.@...............b..yd<......<{.....
+,.~T,...
